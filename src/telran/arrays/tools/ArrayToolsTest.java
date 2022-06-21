@@ -79,22 +79,6 @@ class ArrayToolsTest {
         });
         ArrayTools.printArray(origin);
 
-//        origin = new Integer[]{1, 2, 3, 6, 4, 5, 6, 7, 8, 4, 9, 3, 5, 8};
-//        ArrayTools.bubbleSort(origin, (s1, s2) -> s1.length() - s2.length());
-//        origin = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 3};
-
-//        ArrayTools.bubbleSort(origin, (i1, i2) -> {
-//            int countEven = 0;
-//            int countOdd = 0;
-//            int even = 0;
-//            if (i1 % 2 == 0){       }
-//
-//
-//
-//             });
-//            }}
-
-
     }
 
 }
