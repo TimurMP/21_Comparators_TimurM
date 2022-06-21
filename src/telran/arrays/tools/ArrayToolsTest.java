@@ -13,9 +13,11 @@ class ArrayToolsTest {
 
     @BeforeEach
     void setUp() {
-        arrNum = new Integer[]{9, 7, 4, 7, 2, 5, 9, 1, 0};
-        arrStr = new String[] {"one", "two", "three", "four", "five"};
-        origin = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 3};
+        arrNum = new Integer[]{9, 7, 4, 7, 2, 5, 9, 1, 0, 1, 25, 24, 26, 88};
+        arrStr = new String[]{"one", "two", "three", "four", "five"};
+//        origin = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 3};
+        origin = new Integer[]{1, 2, 3, 6, 4, 5, 6, 7, 8, 4, 9, 3, 5, 8};
+
 
     }
 
@@ -53,30 +55,31 @@ class ArrayToolsTest {
 
     }
 
-    @Test
-    void testBubbleSortStrComparator() {
-        System.out.println("Test Bubble Sort String Comparator");
-        ArrayTools.bubbleSort(arrStr, (s1, s2) -> s1.length() - s2.length());
-        ArrayTools.printArray(arrStr);
-
-    }
+//    @Test
+//    void testBubbleSortStrComparator() {
+//        System.out.println("Test Bubble Sort String Comparator");
+//        ArrayTools.bubbleSort(arrStr, (s1, s2) -> s1.length() - s2.length());
+//        ArrayTools.printArray(arrStr);
+//
+//    }
 
     @Test
     void OddEvenComparator() {
         System.out.println("Test Bubble Sort String Odd Even Comparator");
         ArrayTools.bubbleSort(origin, (i1, i2) -> {
+            return i1 - i2;
 
-            int even = i1 % 2;
+        }, (i1, i2) -> {
             int odd = i2 - i1;
-            if (i1 % 2 == 0){
-                return even;
-
+            if (i1 % 2 == 0) {
+                return 0;
             }
             return odd;
+
         });
         ArrayTools.printArray(origin);
 
-
+//        origin = new Integer[]{1, 2, 3, 6, 4, 5, 6, 7, 8, 4, 9, 3, 5, 8};
 //        ArrayTools.bubbleSort(origin, (s1, s2) -> s1.length() - s2.length());
 //        origin = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 3};
 
@@ -90,7 +93,6 @@ class ArrayToolsTest {
 //
 //             });
 //            }}
-
 
 
     }

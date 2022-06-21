@@ -38,7 +38,7 @@ public class ArrayTools {
         }
     }
 
-    public static <T> void bubbleSort(T[] arr, Comparator<T> comparator) {
+    public static <T> void bubbleSort(T[] arr, Comparator<T> comparator, Comparator<T> comparator1) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (comparator.compare(arr[j], arr[j+1]) > 0) {
@@ -46,10 +46,18 @@ public class ArrayTools {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = t;
                 }
+        }
 
+    }
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (comparator1.compare(arr[j], arr[j+1]) > 0) {
+                    T t = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = t;
+                }
             }
 
         }
-    }
 
-}
+}}
